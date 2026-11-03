@@ -1,4 +1,6 @@
 /* Cozy Journal — minimal theme for Obsidian */
+
+/* ===== Light Theme (Wikipedia-inspired palette) ===== */
 .theme-light {
   --background-primary: #ffffff;
   --background-primary-alt: #f8f9fa;
@@ -62,7 +64,7 @@
   --radius-l: 12px;
 }
 
-/* ===== Dark Theme ===== */
+/* ===== Dark Theme (Wikipedia Dark Palette on Pure Black) ===== */
 .theme-dark {
   --background-primary: #000000;
   --background-primary-alt: #0a0b0d;
@@ -279,7 +281,10 @@ button, .clickable-icon {
 .markdown-preview-view li { text-align: justify; }
 .markdown-source-view.mod-cm6 .cm-content { text-align: justify; }
 
-/* CANVAS */
+/* ══════════════════════════════════════════════════════
+   CANVAS
+   ══════════════════════════════════════════════════════ */
+
 /* Reset text alignment inside canvas nodes to default (left) */
 .canvas-node-content p,
 .canvas-node-content li,
@@ -345,3 +350,108 @@ button, .clickable-icon {
   background: var(--background-modifier-hover);
   color: var(--text-accent);
 }
+
+/* ══════════════════════════════════════════════════════
+   NOTION-STYLE MULTI-COLUMN LAYOUT
+   ══════════════════════════════════════════════════════ */
+
+/* Column Callout Containers */
+.callout[data-callout="multi-column"],
+.callout[data-callout="columns"] {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 1em 0 !important;
+  box-shadow: none !important;
+}
+
+.callout[data-callout="multi-column"] > .callout-title,
+.callout[data-callout="columns"] > .callout-title {
+  display: none !important;
+}
+
+.callout[data-callout="multi-column"] > .callout-content,
+.callout[data-callout="columns"] > .callout-content {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+/* Individual Columns */
+.callout[data-callout="multi-column"] > .callout-content > .callout[data-callout="column"],
+.callout[data-callout="multi-column"] > .callout-content > .callout[data-callout="col"],
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="column"],
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="col"] {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.callout[data-callout="multi-column"] > .callout-content > .callout[data-callout="column"] > .callout-title,
+.callout[data-callout="multi-column"] > .callout-content > .callout[data-callout="col"] > .callout-title,
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="column"] > .callout-title,
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="col"] > .callout-title {
+  display: none !important;
+}
+
+/* Card variant: [!column|card] or [!col|card] */
+.callout[data-callout="column"][data-callout-metadata*="card"],
+.callout[data-callout="col"][data-callout-metadata*="card"] {
+  background-color: var(--background-secondary) !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: var(--radius-m, 8px) !important;
+  padding: 12px 16px !important;
+}
+
+/* HTML Div Containers (.columns, .columns-2, .columns-3, .columns-4) */
+.columns,
+.columns-2,
+.columns-3,
+.columns-4 {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 16px !important;
+  margin: 1em 0 !important;
+  width: 100% !important;
+}
+
+.columns > *,
+.columns-2 > *,
+.columns-3 > *,
+.columns-4 > * {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+
+.columns-2 > * {
+  flex-basis: calc(50% - 8px) !important;
+}
+
+.columns-3 > * {
+  flex-basis: calc(33.333% - 10.66px) !important;
+}
+
+.columns-4 > * {
+  flex-basis: calc(25% - 12px) !important;
+}
+
+/* Responsive collapse on small screens */
+@media (max-width: 600px) {
+  .callout[data-callout="multi-column"] > .callout-content,
+  .callout[data-callout="columns"] > .callout-content,
+  .columns,
+  .columns-2,
+  .columns-3,
+  .columns-4 {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
