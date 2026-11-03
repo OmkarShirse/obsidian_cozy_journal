@@ -4,7 +4,7 @@
 
 A clean, minimalist reading and journaling theme for Obsidian inspired by the Wikipedia design language. Features a dual-palette system: a crisp **Wikipedia Light Mode** and a high-contrast **OLED Pure Black Dark Mode** with soft blue accents — no plugins required.
 
-> **Version:** 1.2.5 · **Author:** [OmkarShirse](https://github.com/OmkarShirse) · **License:** MIT
+> **Version:** 1.2.6 · **Author:** [OmkarShirse](https://github.com/OmkarShirse) · **License:** MIT
 
 ---
 
@@ -13,6 +13,7 @@ A clean, minimalist reading and journaling theme for Obsidian inspired by the Wi
 - **Dual-Theme Wikipedia Aesthetic:**
   - **Light Mode:** Classic Wikipedia paper `#ffffff` background, `#f8f9fa` secondary panels, `#a2a9b1` borders, and Wikipedia blue (`#3366cc`) links.
   - **Dark Mode:** Pure OLED black (`#000000`) base, high-contrast crisp text (`#eaecf0`), and soft blue (`#81a8f8`) links.
+- **Notion-Style Multi-Columns:** Create responsive side-by-side columns effortlessly with standard nested callouts (`> [!multi-column]` > `> [!column]`) or `.columns-2` HTML blocks without any plugins.
 - **High-Contrast & Legible UI:** Form fields, dropdowns, command palettes, and modals feature subtle elevation and defined borders so text never blends into the background.
 - **Minimalist List Bullets:** Clean `➤` arrow markers in subtle muted tones.
 - **Cozy Typography:** Elegant serif reading font (Georgia / Iowan Old Style) for long-form writing, paired with JetBrains Mono / Fira Code for code blocks.
@@ -22,6 +23,28 @@ A clean, minimalist reading and journaling theme for Obsidian inspired by the Wi
 - **Justified Text:** Evenly balanced paragraphs and lists in both Reading View and Live Preview.
 - **Hidden Frontmatter Box:** Note properties/metadata panel hidden by default for a clutter-free reading experience.
 - **Lightweight & Fast:** Respects Obsidian native heading scales and readable line lengths without bloated CSS or `!important` hacks.
+
+---
+
+## 📐 Using Multi-Columns
+
+You can organize content into side-by-side columns using pure markdown callouts:
+
+```markdown
+> [!multi-column]
+> > [!column]
+> > ### Left Column
+> > - Clean bullet points
+> > - Note item
+> 
+> > [!column]
+> > ### Right Column
+> > Paragraph text, checklists, code blocks, or images.
+```
+
+> [!TIP]
+> Use `> > [!column|card]` if you want a column to have an elevated card background and border.
+> On mobile devices, columns automatically collapse vertically for readability.
 
 ---
 
@@ -53,6 +76,10 @@ You can customize core CSS variables at the top of `theme.css`:
 ---
 
 ## 📋 Changelog
+
+### v1.2.6
+- **Notion-Style Columns:** Built-in multi-column support via nested callouts (`[!multi-column]` / `[!column]`) and responsive `.columns-2/3/4` blocks.
+- **Card Variant:** Optional `[!column|card]` styling for container-like column cards.
 
 ### v1.2.5
 - **Dual Mode Overhaul:** Added complete Wikipedia Light Theme and redesigned Dark Theme.
