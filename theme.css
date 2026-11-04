@@ -254,9 +254,9 @@ button, .clickable-icon {
   border-radius: var(--radius-s); transition: background 0.15s ease;
 }
 
-/* ===== Hide frontmatter ===== */
-.theme-dark .metadata-container,
-.theme-light .metadata-container { display: none; }
+/* ===== Hide frontmatter in active note only (preserves sidebar Properties panel) ===== */
+.theme-dark .mod-root .metadata-container,
+.theme-light .mod-root .metadata-container { display: none; }
 
 /* ===== Images ===== */
 .markdown-preview-view img {

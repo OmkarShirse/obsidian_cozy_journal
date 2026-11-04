@@ -4,7 +4,7 @@
 
 A clean, minimalist reading and journaling theme for Obsidian inspired by the Wikipedia design language. Features a dual-palette system: a crisp **Wikipedia Light Mode** and a high-contrast **OLED Pure Black Dark Mode** with soft blue accents — no plugins required.
 
-> **Version:** 1.2.7 · **Author:** [OmkarShirse](https://github.com/OmkarShirse) · **License:** MIT
+> **Version:** 1.2.8 · **Author:** [OmkarShirse](https://github.com/OmkarShirse) · **License:** MIT
 
 ---
 
@@ -76,6 +76,9 @@ You can customize core CSS variables at the top of `theme.css`:
 ---
 
 ## 📋 Changelog
+
+### v1.2.8
+- **Sidebar Properties Fix:** Scope frontmatter hiding rule to note content (`.mod-root`) only, restoring full visibility of the Properties panel in the right sidebar.
 
 ### v1.2.7
 - **Notion-Style Columns:** Built-in multi-column support via nested callouts (`[!multi-column]` / `[!column]`) and responsive `.columns-2/3/4` blocks.
